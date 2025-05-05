@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  mssql:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourStrong!Passw0rd
+      - MSSQL_PID=Developer
+    ports:
+      - "1433:1433"
